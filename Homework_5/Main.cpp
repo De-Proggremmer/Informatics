@@ -69,14 +69,15 @@ int main() {
 
                     // Преобразование экранных координат в "математические"
                     float mathX = (mousePos.x - 400) / 30.0f; // Масштаб 30 по X
-                    float mathY = -(mousePos.y - 300) / 100.0f; // Масштаб 100 по Y
+                    float mathY = -(mousePos.y - 300) / 30.0f; // Масштаб 100 по Y
 
                     // Установка новой пользовательской точки
                     userPoint.setPosition(mousePos.x - userPoint.getRadius(), mousePos.y - userPoint.getRadius());
                     userPointExists = true; // Помечаем, что точка существует
 
                     // 3 _ Допишите логику проверки точки по переменным mathX и mathY !
-                    float y1 = mathX * mathX / 10 - 4, y2 = -std::abs(mathX);
+                    float y1 = (mathX * mathX / 10) - 4;
+                    float y2 = -std::abs(mathX);
                     std::string zone;
 
                     if (mathY < y2 && mathY > y1) { zone = "Zone 1"; }
@@ -102,11 +103,11 @@ int main() {
 
 
 
-        // 5 _  Отрисовка графика y1 = 0.5*x (Замените на ваш график)
-        drawGraph(window, [](float x) { return 0.5 * x; }, -10, 10, 30, 100, sf::Color::Blue);
+        // 5 _  Отрисовка графика y1 = 0.1*x*x - 4 (Замените на ваш график)
+        drawGraph(window, [](float x) { return (x * x / 10.0f) - 4.0f; }, -15, 15, 30, 30, sf::Color::Blue);
 
-        // 5 _   Отрисовка графика y2 = x * x - 5 (Замените на ваш график)
-        drawGraph(window, [](float x) { return -x * x + 5 / 10.0f; }, -10, 10, 30, 10, sf::Color::Red);
+        // 5 _   Отрисовка графика y2 = -|x| (Замените на ваш график)
+        drawGraph(window, [](float x) { return -std::abs(x); }, -15, 15, 30, 30, sf::Color::Red);
 
         // Отрисовка пользовательской точки, если она существует
         if (userPointExists) {

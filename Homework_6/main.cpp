@@ -20,10 +20,12 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
 		window.clear(sf::Color::White);
-		for (int i = 0; i < gridSize; ++i)
+
+		for (int i = 0; i < gridSize; i++)
 		{
-			for (int j = 0; j < gridSize; ++j)
+			for (int j = 0; j < gridSize; j++)
 			{
 				cells[i][j].setSize(sf::Vector2f(cellSize - 1, cellSize - 1));
 				cells[i][j].setPosition(i * cellSize, j * cellSize);
@@ -39,9 +41,11 @@ int main()
 
 				cells[i][j].setOutlineColor(sf::Color::Black);
 				cells[i][j].setOutlineThickness(1);
+
 				window.draw(cells[i][j]);
 			}
 		}
+
 		window.display();
 	}
 

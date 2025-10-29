@@ -1,11 +1,10 @@
 def diff_set(A, B):
-    C = set()
-    for i in B:
-        flg = True
-        for j in A:
-            if (i == j) or (i >= 0):
-                flg = False
-        if flg: C.add(i)
+    C = set()	    
+    C = B - A
+    for i in C:
+        if i >= 0:
+	   C.remove(i)
+
     print(C)
 
 

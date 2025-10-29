@@ -1,11 +1,4 @@
-# import Geometry
-#
-# a, b, c = 1, 1, 1
-#
-# print(Geometry.get_perimetr(a, b, c))
-# print(Geometry.get_square(a, b, c))
-
-def set_diff(A, B):
+def diff_set(A, B):
     C = set()
     for i in B:
         flg = True
@@ -28,4 +21,4 @@ print("Элементы B: ")
 for i in range(N):
     B.add(int(input()))
 
-set_diff(A, B)
+diff_set(A, B)

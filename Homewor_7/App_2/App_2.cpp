@@ -1,7 +1,7 @@
 #include <iostream>
 #include <set>
 
-void diff_arr(std::set<int>* A, std::set<int>* B);
+void diff_set(std::set<int>* A, std::set<int>* B);
 void printSet(std::set<int>* Set);
 
 int main()
@@ -29,7 +29,7 @@ int main()
 		B->insert(b);
 	}
 
-	diff_arr(A, B);
+	diff_set(A, B);
 
 	delete A;
 	delete B;
@@ -37,7 +37,7 @@ int main()
 	return 0;
 }
 
-void diff_arr(std::set<int>* A, std::set<int>* B)
+void diff_set(std::set<int>* A, std::set<int>* B)
 {
 	std::set<int>* C = new std::set<int>;
 

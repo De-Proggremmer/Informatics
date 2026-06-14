@@ -71,7 +71,7 @@ namespace SortingTests
         }
     };
 
-    // ---------------------- Тесты для quick_sort ----------------------
+    // ---------------------- quick_sort ----------------------
     TEST_CLASS(QuickSortTests)
     {
     public:

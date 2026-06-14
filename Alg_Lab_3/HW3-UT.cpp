@@ -2,7 +2,6 @@
 #include "CppUnitTest.h"
 
 #include <vector>
-#include <algorithm>
 
 #include "../HW3/main.cpp"
 
